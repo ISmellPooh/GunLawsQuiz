@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>GunLawsQuiz</title>
+</head>
+
+<body style="background-color:green;">
+
+<h2 style="text-align:center;"><span style='font-size:50px;'>&#9876;</span>US Gun Laws Quiz<span style='font-size:50px;'>&#9876;</span></h2>
+
+<br><textarea rows="2" cols="50">Enter Name</textarea>
+
+<ol>
+    <li><p>Go to the link below, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</p></li>
+
+    <a href="http://time.com/5169210/us-gun-control-laws-history-timeline/">Link</a>
+
+    <br><button type="button" onclick="alert('Correct');">
+        Assault weapons ban
+    </button>
+
+    <button type="button" onclick="alert('Incorrect');">
+        Fully automatic gun ban
+    </button>
+
+    <li><p>How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</p></li>
+
+    <textarea rows="2" cols="50">Your answer</textarea>
+
+    <li><p>Is the Public Safety and Recreational Firearms Use Protection Act still in affect today?</p></li>
+
+    <button type="button" onclick="alert('Incorrect');">
+        Yes
+    </button>
+        
+    <button type="button" onclick="alert('Correct');">
+        No
+    </button>
+
+    <li><p>Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US? <i>(Click on the image of the gun)</i></p></li>
+
+    <table style="border:4px solid black;">
+        <tr>
+            <td style="border:1px solid black;"><img src="AK47.jpg" width="150" height="150" alt="AK47" usemap="#gunmap1"></td>
+            <td style="border:1px solid black;"><img src="AR15.jpg" width="150" height="150" alt="AR15" usemap="#gunmap2"></td>
+            <td style="border:1px solid black;"><img src="Glock17.jpg" width="150" height="150" alt="Glock17" usemap="#gunmap3"></td>
+
+            <map name="gunmap1">
+                <area shape="rect" coords="0,0,150,150" alt="AK47" onclick="alert('Correct')">
+            </map>
+
+            <map name="gunmap2">
+                <area shape="rect" coords="0,0,150,150" alt="AR15" onclick="alert('Incorrect');">
+            </map>
+
+            <map name="gunmap3">
+                <area shape="rect" coords="0,0,150,150" alt="Glock17" onclick="alert('Incorrect');">
+            </map>
+
+        </tr>
+    </table>
+
+    <li><p>Are fully automatic guns <b>LEGAL</b> for civilians to own?</p></li>
+
+    <button type="button" onclick="alert('Incorrect');">
+            Yes
+    </button>
+
+    <button type="button" onclick="alert('Correct');">
+            No
+    </button>
+</ol>
+
+<button type="button" onclick="alert('Where do these answers get stored?');">
+    Submit
+</button>
+
+</body>
+</html>
