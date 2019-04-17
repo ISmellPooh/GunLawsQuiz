@@ -1,79 +1,126 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>GunLawsQuiz</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body style="background-color:green;">
 
-<h2 style="text-align:center;"><span style='font-size:50px;'>&#9876;</span>US Gun Laws Quiz<span style='font-size:50px;'>&#9876;</span></h2>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Gun Laws Quiz</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+                <span class="navbar-toggler-icon"></span> 
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a class="nav-link" href="Responses.html">Responses</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <br>
+    <form>
+        <div class="form-group">
+            <label for="name">Enter Name</label>
+            <textarea class="form-control" id="name" rows="1"></textarea>
+        </div>
+    </form>
+    
+    <br>
+    <ol>
 
-<br><textarea rows="2" cols="50">Enter Name</textarea>
+        <div class="form-group">
+            <li><label for="question1">Open the link below in a new tab. Then, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</label></li>
+            <a class="gunlawsthroughtime" href="http://time.com/5169210/us-gun-control-laws-history-timeline/">Link</a>
+            <br>
+            <button type="button" onclick="alert('Correct');">
+                Assault weapons ban
+            </button>
+            <button type="button" onclick="alert('Incorrect');">
+                Fully automatic gun ban
+            </button>
+        </div>
 
-<ol>
-    <li><p>Go to the link below, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</p></li>
+        <div class="form-group">
+            <li><label for="question2">How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</label></li>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option1" autocomplete="off"> 5 years
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> 10 years
+                </label>
+                <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> 50 years
+                    </label>
+            </div>
+        </div>
 
-    <a href="http://time.com/5169210/us-gun-control-laws-history-timeline/">Link</a>
+        <div class="form-group">
+            <li><label>Based on your revious answer is the Public Safety and Recreational Firearms Use Protection Act still in affect today?</label></li>
+            <button type="button" onclick="alert('Incorrect');">
+                Yes
+            </button>
+            <button type="button" onclick="alert('Correct');">
+                No
+            </button>
+        </div>
 
-    <br><button type="button" onclick="alert('Correct');">
-        Assault weapons ban
-    </button>
+        <div class="form-group">
+            <li><label>Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US? <i>(Click on the image of the gun)</i></label></li>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-md-3">
+                        <img img class="img-fluid" src="GunLawsQuizFolder/AK47.png" width="150" height="150" alt="AK47" usemap="#gunmap1">
+                    </div>
 
-    <button type="button" onclick="alert('Incorrect');">
-        Fully automatic gun ban
-    </button>
+                    <div class="col col-md-3">
+                        <img img class="img-fluid" src="GunLawsQuizFolder/AR15.png" width="150" height="150" alt="AR15" usemap="#gunmap2">
+                    </div>
 
-    <li><p>How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</p></li>
+                    <div class="col col-md-3">
+                        <img img class="img-fluid" src="GunLawsQuizFolder/Glock17.png" width="150" height="150" alt="Glock17" usemap="#gunmap3">
+                    </div>
 
-    <textarea rows="2" cols="50">Your answer</textarea>
+                    <map name="gunmap1">
+                        <area shape="rect" coords="0,0,150,150" alt="AK47" onclick="alert('Correct')">
+                    </map>
+            
+                    <map name="gunmap2">
+                        <area shape="rect" coords="0,0,150,150" alt="AR15" onclick="alert('Incorrect');">
+                    </map>
+            
+                    <map name="gunmap3">
+                        <area shape="rect" coords="0,0,150,150" alt="Glock17" onclick="alert('Incorrect');">
+                    </map>
+                </div>
+            </div>
+        </div>
 
-    <li><p>Is the Public Safety and Recreational Firearms Use Protection Act still in affect today?</p></li>
-
-    <button type="button" onclick="alert('Incorrect');">
-        Yes
-    </button>
+        <div class="form-group">
+            <li><label>Are fully automatic guns <b>LEGAL</b> for civilians to own?</label></li>
+            <button type="button" onclick="alert('Incorrect');">
+                Yes
+            </button>
         
-    <button type="button" onclick="alert('Correct');">
-        No
+            <button type="button" onclick="alert('Correct');">
+                No
+            </button>
+        </div>
+    </ol>
+
+    <button type="button" onclick="alert('Where do these answers get stored?');">
+        Submit
     </button>
-
-    <li><p>Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US? <i>(Click on the image of the gun)</i></p></li>
-
-    <table style="border:4px solid black;">
-        <tr>
-            <td style="border:1px solid black;"><img src="AK47.jpg" width="150" height="150" alt="AK47" usemap="#gunmap1"></td>
-            <td style="border:1px solid black;"><img src="AR15.jpg" width="150" height="150" alt="AR15" usemap="#gunmap2"></td>
-            <td style="border:1px solid black;"><img src="Glock17.jpg" width="150" height="150" alt="Glock17" usemap="#gunmap3"></td>
-
-            <map name="gunmap1">
-                <area shape="rect" coords="0,0,150,150" alt="AK47" onclick="alert('Correct')">
-            </map>
-
-            <map name="gunmap2">
-                <area shape="rect" coords="0,0,150,150" alt="AR15" onclick="alert('Incorrect');">
-            </map>
-
-            <map name="gunmap3">
-                <area shape="rect" coords="0,0,150,150" alt="Glock17" onclick="alert('Incorrect');">
-            </map>
-
-        </tr>
-    </table>
-
-    <li><p>Are fully automatic guns <b>LEGAL</b> for civilians to own?</p></li>
-
-    <button type="button" onclick="alert('Incorrect');">
-            Yes
-    </button>
-
-    <button type="button" onclick="alert('Correct');">
-            No
-    </button>
-</ol>
-
-<button type="button" onclick="alert('Where do these answers get stored?');">
-    Submit
-</button>
 
 </body>
 </html>
