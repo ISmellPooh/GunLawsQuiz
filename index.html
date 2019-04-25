@@ -30,17 +30,17 @@
         <br>
 
         <div class="container-fluid">
-        <form id=set1>
+        <form id=set0>
             <div class="form-group">
                 <label for="name">Enter Name</label>
                 <textarea class="form-control" id="name" rows="1"></textarea>
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="next1" onclick="displayNextQuestions(1)">Next</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next0" onclick="displayNextQuestions(0)">Next</button>
             <br>
         </form>
     
         <br>
-        <form id="set2" style="display:none;">
+        <form id="set1" style="display:none;">
             <div class="form-group">
                 <label for="question1">Open <a class="gunlawsthroughtime" href="http://time.com/5169210/us-gun-control-laws-history-timeline/">link</a> in a new tab. Then, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</label>
                 <br>
@@ -51,11 +51,11 @@
                     Fully automatic gun ban
                 </button>
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="next2" onclick="displayNextQuestions(2)">Next</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next1" onclick="displayNextQuestions(1)">Next</button>
             <br>
         </form>
     
-        <form id="set3" style="display:none;">
+        <form id="set2" style="display:none;">
             <div class="form-group">
                 <label for="question2">How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</label>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -70,11 +70,11 @@
                     </label>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="next3" onclick="displayNextQuestions(3)">Next</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next2" onclick="displayNextQuestions(2)">Next</button>
             <br>
         </form>
 
-        <form id="set4" style="display:none;">
+        <form id="set3" style="display:none;">
             <div class="form-group">
                 <label>Based on your revious answer is the Public Safety and Recreational Firearms Use Protection Act still in affect today?</label>
                 <button type="button" onclick="alert('Incorrect');">
@@ -84,11 +84,11 @@
                     No
                 </button>
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="next4" onclick="displayNextQuestions(4)">Next</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next3" onclick="displayNextQuestions(3)">Next</button>
             <br>
         </form>
 
-        <form id="set5" style="display:none;">
+        <form id="set4" style="display:none;">
             <div class="form-group">
                 <label>Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US? <i>(Click on the image of the gun)</i></label>
                 <div class="container">
@@ -119,11 +119,11 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="next5" onclick="displayNextQuestions(5)">Next</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next4" onclick="displayNextQuestions(4)">Next</button>
             <br>
         </form>
 
-        <form id="set6" style="display:none;">
+        <form id="set5" style="display:none;">
             <div class="form-group">
                 <label>Are fully automatic guns <b>LEGAL</b> for civilians to own?</label>
                 <button type="button" onclick="alert('Incorrect');">
@@ -146,7 +146,7 @@
         <script>
             function displayNextQuestions(set) {
                 // set is which set of questions was just displayed
-                if (set > 1 && set < 7) {
+                if (set > 0 && set < 5) {
                     // stop displaying the current next button 
                     var lastButton = document.getElementById("next"+set);
                     lastButton.style.display = "none";
