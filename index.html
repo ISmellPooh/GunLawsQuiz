@@ -11,112 +11,177 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
-<body style="background-color:green;">
+    <body style="background-color:green;">
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Gun Laws Quiz</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
-                <span class="navbar-toggler-icon"></span> 
-            </button>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a class="nav-link" href="Responses.html">Responses</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <br>
-    <form>
-        <div class="form-group">
-            <label for="name">Enter Name</label>
-            <textarea class="form-control" id="name" rows="1"></textarea>
-        </div>
-    </form>
-    
-    <br>
-        <div class="form-group">
-            <label for="question1">Open <a class="gunlawsthroughtime" href="http://time.com/5169210/us-gun-control-laws-history-timeline/">link</a> in a new tab. Then, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</label>
-            <br>
-            <button type="button" onclick="alert('Correct');">
-                Assault weapons ban
-            </button>
-            <button type="button" onclick="alert('Incorrect');">
-                Fully automatic gun ban
-            </button>
-        </div>
-
-        <div class="form-group">
-            <label for="question2">How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</label>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option1" autocomplete="off"> 5 years
-                </label>
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option2" autocomplete="off"> 10 years
-                </label>
-                <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option3" autocomplete="off"> 50 years
-                    </label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Based on your revious answer is the Public Safety and Recreational Firearms Use Protection Act still in affect today?</label>
-            <button type="button" onclick="alert('Incorrect');">
-                Yes
-            </button>
-            <button type="button" onclick="alert('Correct');">
-                No
-            </button>
-        </div>
-
-        <div class="form-group">
-            <label>Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US? <i>(Click on the image of the gun)</i></label>
-            <div class="container">
-                <div class="row">
-                    <div class="col col-md-3">
-                        <img img class="img-fluid" src="AK47.png" width="150" height="150" alt="AK47" usemap="#gunmap1">
-                    </div>
-
-                    <div class="col col-md-3">
-                        <img img class="img-fluid" src="AR15.png" width="150" height="150" alt="AR15" usemap="#gunmap2">
-                    </div>
-
-                    <div class="col col-md-3">
-                        <img img class="img-fluid" src="Glock17.png" width="150" height="150" alt="Glock17" usemap="#gunmap3">
-                    </div>
-
-                    <map name="gunmap1">
-                        <area shape="rect" coords="0,0,150,150" alt="AK47" onclick="alert('Correct')">
-                    </map>
-            
-                    <map name="gunmap2">
-                        <area shape="rect" coords="0,0,150,150" alt="AR15" onclick="alert('Incorrect');">
-                    </map>
-            
-                    <map name="gunmap3">
-                        <area shape="rect" coords="0,0,150,150" alt="Glock17" onclick="alert('Incorrect');">
-                    </map>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Gun Laws Quiz</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="navbar-toggler-icon"></span> 
+                </button>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a class="nav-link" href="Responses.html">Responses</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </nav>
+    
+        <br>
 
-        <div class="form-group">
-            <label>Are fully automatic guns <b>LEGAL</b> for civilians to own?</label>
-            <button type="button" onclick="alert('Incorrect');">
-                Yes
-            </button>
+        <div class="container-fluid">
+        <form id=set1>
+            <div class="form-group">
+                <label for="name">Enter Name</label>
+                <textarea class="form-control" id="name" rows="1"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next1" onclick="displayNextQuestions(1)">Next</button>
+            <br>
+        </form>
+    
+        <br>
+        <form id="set2" style="display:none;">
+            <div class="form-group">
+                <label for="question1">Open <a class="gunlawsthroughtime" href="http://time.com/5169210/us-gun-control-laws-history-timeline/">link</a> in a new tab. Then, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</label>
+                <br>
+                <button type="button" onclick="alert('Correct');">
+                    Assault weapons ban
+                </button>
+                <button type="button" onclick="alert('Incorrect');">
+                    Fully automatic gun ban
+                </button>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next2" onclick="displayNextQuestions(2)">Next</button>
+            <br>
+        </form>
+    
+        <form id="set3" style="display:none;">
+            <div class="form-group">
+                <label for="question2">How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option1" autocomplete="off"> 5 years
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> 10 years
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> 50 years
+                    </label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next3" onclick="displayNextQuestions(3)">Next</button>
+            <br>
+        </form>
+
+        <form id="set4" style="display:none;">
+            <div class="form-group">
+                <label>Based on your revious answer is the Public Safety and Recreational Firearms Use Protection Act still in affect today?</label>
+                <button type="button" onclick="alert('Incorrect');">
+                    Yes
+                </button>
+                <button type="button" onclick="alert('Correct');">
+                    No
+                </button>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next4" onclick="displayNextQuestions(4)">Next</button>
+            <br>
+        </form>
+
+        <form id="set5" style="display:none;">
+            <div class="form-group">
+                <label>Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US? <i>(Click on the image of the gun)</i></label>
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-3">
+                            <img img class="img-fluid" src="AK47.png" width="150" height="150" alt="AK47" usemap="#gunmap1">
+                        </div>
+
+                        <div class="col col-md-3">
+                            <img img class="img-fluid" src="AR15.png" width="150" height="150" alt="AR15" usemap="#gunmap2">
+                        </div>
+
+                        <div class="col col-md-3">
+                            <img img class="img-fluid" src="Glock17.png" width="150" height="150" alt="Glock17" usemap="#gunmap3">
+                        </div>
+
+                        <map name="gunmap1">
+                            <area shape="rect" coords="0,0,150,150" alt="AK47" onclick="alert('Correct')">
+                        </map>
+            
+                        <map name="gunmap2">
+                            <area shape="rect" coords="0,0,150,150" alt="AR15" onclick="alert('Incorrect');">
+                        </map>
+            
+                        <map name="gunmap3">
+                            <area shape="rect" coords="0,0,150,150" alt="Glock17" onclick="alert('Incorrect');">
+                        </map>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="next5" onclick="displayNextQuestions(5)">Next</button>
+            <br>
+        </form>
+
+        <form id="set6" style="display:none;">
+            <div class="form-group">
+                <label>Are fully automatic guns <b>LEGAL</b> for civilians to own?</label>
+                <button type="button" onclick="alert('Incorrect');">
+                    Yes
+                </button>
         
-            <button type="button" onclick="alert('Correct');">
-                No
-            </button>
+                <button type="button" onclick="alert('Correct');">
+                    No
+                </button>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="done()">Submit</button>
+            <br>
+        </form>
+
+        <div id="thanks" name="thanks" class="alert alert-primary" role="alert" style="display:none;">
+            Thanks for submitting your answers to this quiz.
+        </div>
         </div>
 
-    <button type="button" onclick="alert('Where do these answers get stored?');">
-        Submit
-    </button>
+        <script>
+            function displayNextQuestions(set) {
+                // set is which set of questions was just displayed
+                if (set > 1 && set < 7) {
+                    // stop displaying the current next button 
+                    var lastButton = document.getElementById("next"+set);
+                    lastButton.style.display = "none";
+                    // start displaying the next set (questions+button)
+                    var nextQuestions = document.getElementById("set"+(set+1));
+                    nextQuestions.style.display = "block";
 
-</body>
+                    // automatically scroll down to new questions
+                    window.location = "#set"+(set+1);
+                }
+            }
+
+            function done() {
+                // Require feedback or explanation for no feedback
+                var feedbackAnswer = document.getElementById("feedback").value;
+                if (feedbackAnswer === "" || feedbackAnswer.toLowerCase() === "n/a") {
+                    var whyNoFeedbackAnswer = document.getElementById("whyNoFeedback").value;
+                    if (whyNoFeedbackAnswer === "") {
+                        displayNextQuestions(4);
+                        return;
+                    }
+                }
+
+                // let user know that these answers are DISAPPEARING FOREVER
+                alert('Where do these answers get stored?');
+                // stop displaying all of the alerts, questions, and buttons 
+                for (var i = 0; i < 6; i = i + 1) {
+                    var nextQuestions = document.getElementById("set"+i);
+                    nextQuestions.style.display = "none";
+                }
+                // start displaying the thanks alert
+                var thanksAlert = document.getElementById("thanks");
+                thanksAlert.style.display = "block";
+            }
+        </script>
+
+    </body>
 </html>
