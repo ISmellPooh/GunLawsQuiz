@@ -164,6 +164,21 @@
                 }
             }
 
+            function bearArms() {
+                var beararmsAnswer = document.getElementById("bear arms question").value;
+                if (beararmsnswer === "Yes" || beararmsnswer === "yes") {
+                    answer === "You should consider buying a gun";
+                    done();
+                    return;
+                }
+                var beararmsAnswer = document.getElementById("bear arms question").value;
+                if (beararmsnswer === "No" || beararmsnswer === "no") {
+                    answer === "You should not consider buying a gun";
+                    done();
+                    return;
+                }
+            }
+
             function done() {
                 // let user know that these answers are DISAPPEARING FOREVER
                 alert('Where do these answers get stored?');
