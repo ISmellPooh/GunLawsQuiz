@@ -139,7 +139,7 @@
                     <label for="bear arms question">Do you support the right to bear arms?</label>
                     <textarea class="form-control" id="bear arms question" rows="1"></textarea>
                 </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="done()">Submit</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="bearArms()">Submit</button>
                 <br>
             </form>
 
@@ -166,22 +166,19 @@
 
             function bearArms() {
                 var beararmsAnswer = document.getElementById("bear arms question").value;
-                if (beararmsnswer === "Yes" || beararmsnswer === "yes") {
-                    answer === "You should consider buying a gun";
-                    done();
+                if (beararmsAnswer === "Yes" || beararmsAnswer === "yes") {
+                    done("You should consider buying a gun");
                     return;
                 }
-                var beararmsAnswer = document.getElementById("bear arms question").value;
-                if (beararmsnswer === "No" || beararmsnswer === "no") {
-                    answer === "You should not consider buying a gun";
-                    done();
+                if (beararmsAnswer === "No" || beararmsAnswer === "no") {
+                    done("You should not consider buying a gun");
                     return;
                 }
             }
 
-            function done() {
+            function done(message) {
                 // let user know that these answers are DISAPPEARING FOREVER
-                alert('Where do these answers get stored?');
+                alert(message);
                 // stop displaying all of the alerts, questions, and buttons 
                 for (var i = 0; i < 7; i = i + 1) {
                     var nextQuestions = document.getElementById("set"+i);
