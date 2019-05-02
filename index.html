@@ -21,6 +21,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
+                        <li><a class="nav-link" href="javascript: reset()">Reset</a></li>
                         <li><a class="nav-link" href="Responses.html">Responses</a></li>
                     </ul>
                 </div>
@@ -36,14 +37,14 @@
             </div>
 
             <br>
-            <form id="set1">
+            <form id="set1" onsubmit="save()">
                 <div class="form-group">
-                    <label for="question1">Open <a class="gunlawsthroughtime" href="http://time.com/5169210/us-gun-control-laws-history-timeline/">link</a> in a new tab. Then, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</label>
+                    <label for="question1" id="question1">Open <a class="gunlawsthroughtime" href="http://time.com/5169210/us-gun-control-laws-history-timeline/">link</a> in a new tab. Then, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</label>
                     <br>
-                    <button type="button" onclick="alert('Correct');">
+                    <button type="button" id="assualtweaponsban" onclick="alert('Correct');">
                         Assault weapons ban
                     </button>
-                    <button type="button" onclick="alert('Incorrect');">
+                    <button type="button" id="fullautogunban" onclick="alert('Incorrect');">
                         Fully automatic gun ban
                     </button>
                 </div>
@@ -51,18 +52,18 @@
                 <br>
             </form>
     
-            <form id="set2" style="display:none;">
+            <form id="set2" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label for="question2">How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</label>
+                    <label for="question2" id="question2">How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</label>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option1" autocomplete="off"> 5 years
+                            <input type="radio" name="options" id="option1" autocomplete="off" onradio="alert('Incorrect')"> 5 years
                         </label>
                         <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> 10 years
+                            <input type="radio" name="options" id="option2" autocomplete="off" onradio="alert('Correct')"> 10 years
                         </label>
                         <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> 50 years
+                            <input type="radio" name="options" id="option3" autocomplete="off" onradio="alert('Incorrect')"> 50 years
                         </label>
                     </div>
                 </div>
@@ -70,13 +71,13 @@
                 <br>
             </form>
 
-            <form id="set3" style="display:none;">
+            <form id="set3" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label>Is the Public Safety and Recreational Firearms Use Protection Act still in affect today?<i>(Hint: if you got the last question right this should be easy)</i></label>
-                    <button type="button" onclick="alert('Incorrect');">
+                    <label id="question3">Is the Public Safety and Recreational Firearms Use Protection Act still in affect today?<i>(Hint: if you got the last question right this should be easy)</i></label>
+                    <button type="button" id="yes1" onclick="alert('Incorrect');">
                         Yes
                     </button>
-                    <button type="button" onclick="alert('Correct');">
+                    <button type="button" id="no1" onclick="alert('Correct');">
                         No
                     </button>
                 </div>
@@ -84,9 +85,9 @@
                 <br>
             </form>
 
-            <form id="set4" style="display:none;">
+            <form id="set4" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label>Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US? <i>(Click on the image of the gun)</i></label>
+                    <label id="question4">Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US? <i>(Click on the image of the gun)</i></label>
                     <div class="container">
                         <div class="row">
                             <div class="col col-md-3">
@@ -119,14 +120,14 @@
                 <br>
             </form>
 
-            <form id="set5" style="display:none;">
+            <form id="set5" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label>Are fully automatic guns <b>LEGAL</b> for civilians to own?</label>
-                    <button type="button" onclick="alert('Incorrect');">
+                    <label id="question5">Are fully automatic guns <b>LEGAL</b> for civilians to own?</label>
+                    <button type="button" id="yes2" onclick="alert('Incorrect');">
                         Yes
                     </button>
         
-                    <button type="button" onclick="alert('Correct');">
+                    <button type="button" id="no2" onclick="alert('Correct');">
                         No
                     </button>
                 </div>
@@ -134,10 +135,10 @@
                 <br>
             </form>
 
-            <form id="set6" style="display:none;">
+            <form id="set6" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label for="bear arms question">Do you support the right to bear arms?</label>
-                    <textarea class="form-control" id="bear arms question" rows="1"></textarea>
+                    <label for="bear arms question" id="question6">Do you support the right to bear arms?</label>
+                    <textarea class="form-control" id="beararmsquestion" rows="1"></textarea>
                 </div>
                 <button type="button" class="btn btn-primary btn-lg btn-block" onclick="bearArms()">Submit</button>
                 <br>
@@ -165,7 +166,7 @@
             }
 
             function bearArms() {
-                var beararmsAnswer = document.getElementById("bear arms question").value;
+                var beararmsAnswer = document.getElementById("beararmsquestion").value;
                 if (beararmsAnswer === "Yes" || beararmsAnswer === "yes") {
                     done("You should consider buying a gun");
                     return;
@@ -188,6 +189,98 @@
                 var thanksAlert = document.getElementById("thanks");
                 thanksAlert.style.display = "block";
             }
+
+            function save() {
+                var dataObject = {
+                    "question1" : document.getElementById("question1").value,
+                    "question2" : document.getElementById("question2").value,
+                    "question3" : document.getElementById("question3").value,
+                    "question4" : document.getElementById("question4").value,
+                    "question5" : document.getElementById("question5").value,
+                    "question6" : document.getElementById("question6").value,
+                };
+
+                // Turn the data object into a string.
+                var dataObjectAsString = JSON.stringify(dataObject);
+                // Store the data object string in local storage in the variable named 'data'.
+                window.localStorage.setItem("data", dataObjectAsString);
+            }
+
+            function restore() {
+                var fromNext = window.localStorage.getItem("fromNext");
+                if (fromNext === true) {
+                    // We're restoring (window.onload) after next button press, so don't restore
+                    window.localStorage.setItem("fromNext", false);
+                    return;
+                }
+
+                // Don't restore and display data if form is complete; only Thanks alert needs displaying.
+                if (document.getElementById("thanks").style.display === "block") {
+                    return;
+                }
+
+                // Get the data object string from local storage and try to turn it back into an object.
+                // This takes the data from local storage and sets the textbox to the values.
+                var dataObjectAsString = window.localStorage.getItem("data");
+                if (dataObjectAsString === null) {
+                    return;
+                }
+                var dataObject = JSON.parse(dataObjectAsString);
+                if (dataObject === null) {
+                    return;
+                }
+
+                document.getElementById("question1").value = dataObject.question1;
+                document.getElementById("question2").value = dataObject.question2;
+                document.getElementById("question3").value = dataObject.question3;
+                document.getElementById("question4").value = dataObject.question4;
+                document.getElementById("question5").value = dataObject.question5;
+                document.getElementById("question6").value = dataObject.question6;
+
+                // Display Restored alert at top of form
+                document.getElementById("restored").style.display = "block";
+
+                // Go through all previously-completed sets of questions and display them
+                var set = window.localStorage.getItem("lastDisplayedSet");
+                for (var i = 1; i <= set; i = i + 1) {
+                    // stop displaying the current next button 
+                    var lastButton = document.getElementById("next"+i);
+                    lastButton.style.display = "none";
+                    // start displaying the next set (questions+button)
+                    var nextQuestions = document.getElementById("set"+(i+1));
+                    nextQuestions.style.display = "block";
+                }
+                // automatically scroll down to new questions
+                window.location = "#set"+(set+1);
+            }
+
+            window.onload = function() { // Runs code on load
+                restoreFromLocalStorage();
+            };
+
+            function reset() {
+                // Reset and clear form.
+                window.localStorage.setItem("lastDisplayedSet", 0);
+
+                // Make sure page does not claim it has restored data
+                document.getElementById("restored").style.display = "none";
+                // Make sure page does not claim its done.
+                document.getElementById("thanks").style.display = "none";
+
+                // Forget the previous data object that saved previous responses
+                window.localStorage.setItem("data", null);
+
+                document.getElementById("question1").value = "";
+                document.getElementById("question2").value = "";
+                document.getElementById("question3").value = "";
+                document.getElementById("question4").value = "";
+                document.getElementById("question5").value = "";
+                document.getElementById("question6").value = "";
+
+                // scroll back to top of page
+                window.location.reload();
+            }
+
         </script>
 
     </body>
