@@ -193,12 +193,19 @@
             function save() {
                 var dataObject = {
                     "name" : document.getElementById("name").value,
-                    "question1" : document.getElementById("question1").value,
-                    "question2" : document.getElementById("question2").value,
-                    "question3" : document.getElementById("question3").value,
-                    "question4" : document.getElementById("question4").value,
-                    "question5" : document.getElementById("question5").value,
-                    "question6" : document.getElementById("question6").value,
+                    "assualtweaponsban" : document.getElementById("assualtweaponsban").value,
+                    "fullautogunban" : document.getElementById("fullautogunban").value,
+                    "option1" : document.getElementById("option1").value,
+                    "option2" : document.getElementById("option2").value,
+                    "option3" : document.getElementById("option3").value,
+                    "yes1" : document.getElementById("yes1").value,
+                    "no1" : document.getElementById("no1").value,
+                    "gunmap1" : document.getElementsByName("gunmap1").value,
+                    "gunmap2" : document.getElementsByName("gunmap2").value,
+                    "gunmap3" : document.getElementsByName("gunmap3").value,
+                    "yes2" : document.getElementById("yes2").value,
+                    "no2" : document.getElementById("no2").value,
+                    "beararmsquestion" : document.getElementById("beararmsquestion").value,
                 };
 
                 // Turn the data object into a string.
@@ -232,12 +239,19 @@
                 }
 
                 document.getElementById("name").value = dataObject.name;
-                document.getElementById("question1").value = dataObject.question1;
-                document.getElementById("question2").value = dataObject.question2;
-                document.getElementById("question3").value = dataObject.question3;
-                document.getElementById("question4").value = dataObject.question4;
-                document.getElementById("question5").value = dataObject.question5;
-                document.getElementById("question6").value = dataObject.question6;
+                document.getElementById("assualtweaponsban").value = dataObject.assualtweaponsban;
+                document.getElementById("fullautogunban").value = dataObject.fullautogunban;
+                document.getElementById("option1").value = dataObject.option1;
+                document.getElementById("option2").value = dataObject.option2;
+                document.getElementById("option3").value = dataObject.option3;
+                document.getElementById("yes1").value = dataObject.yes1;
+                document.getElementById("no1").value = dataObject.no1;
+                document.getElementById("gunmap1").value = dataObject.gunmap1;
+                document.getElementById("gunmap2").value = dataObject.gunmap2;
+                document.getElementById("gunmap3").value = dataObject.gunmap3;
+                document.getElementById("yes2").value = dataObject.yes2;
+                document.getElementById("no2").value = dataObject.no2;
+                document.getElementById("beararmsquestion").value = dataObject.beararmsquestion;
 
                 // Display Restored alert at top of form
                 document.getElementById("restored").style.display = "block";
@@ -273,12 +287,19 @@
                 window.localStorage.setItem("data", null);
 
                 document.getElementById("name").value = "";
-                document.getElementById("question1").value = "";
-                document.getElementById("question2").value = "";
-                document.getElementById("question3").value = "";
-                document.getElementById("question4").value = "";
-                document.getElementById("question5").value = "";
-                document.getElementById("question6").value = "";
+                document.getElementById("assualtweaponsban").value = "";
+                document.getElementById("fullautogunban").value = "";
+                document.getElementById("option1").value = "";
+                document.getElementById("option2").value = "";
+                document.getElementById("option3").value = "";
+                document.getElementById("yes1").value = "";
+                document.getElementById("no1").value = "";
+                document.getElementById("gunmap1").value = "";
+                document.getElementById("gunmap2").value = "";
+                document.getElementById("gunmap3").value = "";
+                document.getElementById("yes2").value = "";
+                document.getElementById("no2").value = "";
+                document.getElementById("beararmsquestion").value = "";
 
                 // scroll back to top of page
                 window.location.reload();
