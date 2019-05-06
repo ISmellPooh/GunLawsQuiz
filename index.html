@@ -192,6 +192,7 @@
 
             function save() {
                 var dataObject = {
+                    "name" : document.getElementById("name").value,
                     "question1" : document.getElementById("question1").value,
                     "question2" : document.getElementById("question2").value,
                     "question3" : document.getElementById("question3").value,
@@ -230,6 +231,7 @@
                     return;
                 }
 
+                document.getElementById("name").value = dataObject.name;
                 document.getElementById("question1").value = dataObject.question1;
                 document.getElementById("question2").value = dataObject.question2;
                 document.getElementById("question3").value = dataObject.question3;
@@ -270,6 +272,7 @@
                 // Forget the previous data object that saved previous responses
                 window.localStorage.setItem("data", null);
 
+                document.getElementById("name").value = "";
                 document.getElementById("question1").value = "";
                 document.getElementById("question2").value = "";
                 document.getElementById("question3").value = "";
