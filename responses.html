@@ -42,8 +42,8 @@
                 </div>
 
                 <div class="form-group">
-                        <label for="name">name:</label>
-                        <textarea id="name" rows="1"></textarea>
+                        <label for="personname">personname:</label>
+                        <textarea id="personname" rows="1"></textarea>
                     </div>
 
                 <div class="form-group">
@@ -107,8 +107,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="beararmsquestion">beararmsquestion:</label>
-                    <textarea id="beararmsquestion" rows="1"></textarea>
+                    <label for="beararmsAnswer">beararmsAnswer:</label>
+                    <textarea id="beararmsAnswer" rows="1"></textarea>
                 </div>
             </form>
         </div>
@@ -132,20 +132,20 @@
 
                 // We successfully got a data object and now textbox's can get the saved values.
                 document.getElementById("dataObjectAsString").value = dataObjectAsString;
-                document.getElementById("name").value = dataObject.name;
-                document.getElementById("assualtweaponsban").value = dataObject.assualtweaponsban;
-                document.getElementById("fullautogunban").value = dataObject.fullautogunban;
-                document.getElementById("option1").value = dataObject.option1;
-                document.getElementById("option2").value = dataObject.option2;
-                document.getElementById("option3").value = dataObject.option3;
-                document.getElementById("yes1").value = dataObject.yes1;
-                document.getElementById("no1").value = dataObject.no1;
-                document.getElementById("gunmap1").value = dataObject.gunmap1;
-                document.getElementById("gunmap2").value = dataObject.gunmap2;
-                document.getElementById("gunmap3").value = dataObject.gunmap3;
-                document.getElementById("yes2").value = dataObject.yes2;
-                document.getElementById("no2").value = dataObject.no2;
-                document.getElementById("beararmsquestion").value = dataObject.beararmsquestion;
+                document.getElementById("personname").value = dataObject.personname;
+                document.getElementById("assualtweaponsban").value = dataObject.assualtweaponsban.getElementsByName('Correct');
+                document.getElementById("fullautogunban").value = dataObject.fullautogunban.getElementsByName('Incorrect');
+                document.getElementById("option1").value = dataObject.option1.getElementsByName('Incorrect');
+                document.getElementById("option2").value = dataObject.option2.getElementsByName('Correct');
+                document.getElementById("option3").value = dataObject.option3.getElementsByName('Incorrect');
+                document.getElementById("yes1").value = dataObject.yes1.getElementsByName('Incorrect');
+                document.getElementById("no1").value = dataObject.no1.getElementsByName('Correct');
+                document.getElementById("gunmap1").value = dataObject.gunmap1.getElementsByName('Correct');
+                document.getElementById("gunmap2").value = dataObject.gunmap2.getElementsByName('Incorrect');
+                document.getElementById("gunmap3").value = dataObject.gunmap3.getElementsByName('Incorrect');
+                document.getElementById("yes2").value = dataObject.yes2.getElementsByName('Incorrect');
+                document.getElementById("no2").value = dataObject.no2.getElementsByName('Correct');
+                document.getElementById("beararmsAnswer").value = dataObject.beararmsAnswer;
             }
 
         </script>
