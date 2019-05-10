@@ -31,6 +31,10 @@
         <br>
 
         <div class="container-fluid">
+            <div id="restored" name="restored" class="alert alert-primary" role="alert" style="display:none;">
+                Restored your previous data.
+            </div>
+
             <div id="set0" class="form-group">
                 <label for="personname">Enter Name</label>
                 <textarea class="form-control" id="personname" rows="1"></textarea>
@@ -39,14 +43,12 @@
             <br>
             <form id="set1" onsubmit="save()">
                 <div class="form-group">
-                    <label for="question1" id="question1">Open <a class="gunlawsthroughtime" href="http://time.com/5169210/us-gun-control-laws-history-timeline/">link</a> in a new tab. Then, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</label>
+                    <label>Open <a class="gunlawsthroughtime" href="http://time.com/5169210/us-gun-control-laws-history-timeline/">link</a> in a new tab. Then, scroll to 1994 and read the law. What is another name for the Public Safety and Recreational Firearms Use Protection Act?</label>
                     <br>
-                    <button type="button" id="assualtweaponsban" onclick="alert(name='Correct');">
-                        Assault weapons ban
-                    </button>
-                    <button type="button" id="fullautogunban" onclick="alert(name='Incorrect');">
-                        Fully automatic gun ban
-                    </button>
+                    <select multiple id="question1">
+                        <option value="Assault Weapons Ban" onclick="alert('Correct')">Assault Weapons Ban</option>
+                        <option value="Full Auto Gun Ban" onclick="alert('Incorrect')">Full Auto Gun Ban</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block" id="next1" onclick="displayNextQuestions(1)">Next</button>
                 <br>
@@ -54,18 +56,12 @@
     
             <form id="set2" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label for="question2" id="question2">How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</label>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option1" autocomplete="off"> 5 years
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> 10 years
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> 50 years
-                        </label>
-                    </div>
+                    <label>How long was the Public Safety and Recreational Firearms Use Protection Act to be in affect?</label>
+                    <select multiple id="question2">
+                        <option value="5 years" onclick="alert('Incorrect')">5 years</option>
+                        <option value="10 years" onclick="alert('Correct')">10 years</option>
+                        <option value="50 years" onclick="alert('Incorrect')">50 years</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block" id="next2" onclick="displayNextQuestions(2)">Next</button>
                 <br>
@@ -73,13 +69,11 @@
 
             <form id="set3" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label id="question3">Is the Public Safety and Recreational Firearms Use Protection Act still in affect today?<i>(Hint: if you got the last question right this should be easy)</i></label>
-                    <button type="button" id="yes1" onclick="alert(name='Incorrect');">
-                        Yes
-                    </button>
-                    <button type="button" id="no1" onclick="alert(name='Correct');">
-                        No
-                    </button>
+                    <label>Is the Public Safety and Recreational Firearms Use Protection Act still in affect today?<i>(Hint: if you got the last question right this should be easy)</i></label>
+                    <select multiple id="question3">
+                        <option value="Yes1" onclick="alert('Incorrect')">Yes</option>
+                        <option value="No1" onclick="alert('Correct')">No</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block" id="next3" onclick="displayNextQuestions(3)">Next</button>
                 <br>
@@ -87,32 +81,26 @@
 
             <form id="set4" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label id="question4">Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US? <i>(Click on the image of the gun)</i></label>
+                    <label>Which one of these guns is <b>ILLEGAL</b> for a civilian to own in the US?</label>
                     <div class="container">
                         <div class="row">
                             <div class="col col-md-3">
-                                <img img class="img-fluid" src="AK47.png" width="150" height="150" alt="AK47" usemap="#gunmap1">
+                                <img img class="img-fluid" src="AK47.png" width="150" height="150" alt="AK47">
                             </div>
 
                             <div class="col col-md-3">
-                                <img img class="img-fluid" src="AR15.png" width="150" height="150" alt="AR15" usemap="#gunmap2">
+                                <img img class="img-fluid" src="AR15.png" width="150" height="150" alt="AR15">
                             </div>
 
                             <div class="col col-md-3">
-                                <img img class="img-fluid" src="Glock17.png" width="150" height="150" alt="Glock17" usemap="#gunmap3">
+                                <img img class="img-fluid" src="Glock17.png" width="150" height="150" alt="Glock17">
                             </div>
 
-                            <map name="gunmap1">
-                                <area shape="rect" coords="0,0,150,150" alt="AK47" onclick="alert(name='Correct')">
-                            </map>
-            
-                            <map name="gunmap2">
-                                <area shape="rect" coords="0,0,150,150" alt="AR15" onclick="alert(name='Incorrect');">
-                            </map>
-            
-                            <map name="gunmap3">
-                                <area shape="rect" coords="0,0,150,150" alt="Glock17" onclick="alert(name='Incorrect');">
-                            </map>
+                            <select multiple id="question4">
+                                <option value="AK47" onclick="alert('Correct')">AK47 (full-auto)</option>
+                                <option value="AR15" onclick="alert('Incorrect')">AR15 (semi-auto)</option>
+                                <option value="Glock17" onclick="alert('Incorrect')">Glock17 (semi-auto)</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -122,14 +110,11 @@
 
             <form id="set5" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label id="question5">Are fully automatic guns <b>LEGAL</b> for civilians to own?</label>
-                    <button type="button" id="yes2" onclick="alert(name='Incorrect');">
-                        Yes
-                    </button>
-        
-                    <button type="button" id="no2" onclick="alert(name='Correct');">
-                        No
-                    </button>
+                    <label>Are fully automatic guns <b>LEGAL</b> for civilians to own?</label>
+                    <select multiple id="question5">
+                        <option value="Yes2" onclick="alert('Incorrect')">Yes</option>
+                        <option value="No2" onclick="alert('Correct')">No</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block" id="next5" onclick="displayNextQuestions(5)">Next</button>
                 <br>
@@ -137,7 +122,7 @@
 
             <form id="set6" onsubmit="save()" style="display:none;">
                 <div class="form-group">
-                    <label for="bear arms question" id="question6">Do you support the right to bear arms?</label>
+                    <label>Do you support the right to bear arms?</label>
                     <textarea class="form-control" id="beararmsquestion" rows="1"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="bearArms()">Submit</button>
@@ -150,6 +135,7 @@
         </div>
 
         <script>
+
             function displayNextQuestions(set) {
                 // set is which set of questions was just displayed
                 if (set > 0 && set < 7) {
@@ -160,9 +146,15 @@
                     var nextQuestions = document.getElementById("set"+(set+1));
                     nextQuestions.style.display = "block";
 
-                    // automatically scroll down to new questions
-                    window.location = "#set"+(set+1);
                 }
+
+                // automatically scroll down to new questions
+                window.location = "#set"+(set+1);
+
+                // save number of last displayed set of questions in local storage
+                window.localStorage.setItem("lastDisplayedSet", set);
+
+                window.localStorage.setItem("fromNext", true);
             }
 
             function bearArms() {
@@ -191,21 +183,29 @@
             }
 
             function save() {
+                var selector1 = document.getElementById('question1');
+                var question1value = selector1[selector1.selectedIndex].value;
+
+                var selector2 = document.getElementById('question2');
+                var question2value = selector2[selector2.selectedIndex].value;
+
+                var selector3 = document.getElementById('question3');
+                var question3value = selector3[selector3.selectedIndex].value;
+
+                var selector4 = document.getElementById('question4');
+                var question4value = selector4[selector4.selectedIndex].value;
+
+                var selector5 = document.getElementById('question5');
+                var question5value = selector5[selector5.selectedIndex].value;
+
                 var dataObject = {
                     "personname" : document.getElementById("personname").value,
-                    "assualtweaponsban" : document.getElementById("assualtweaponsban").value,
-                    "fullautogunban" : document.getElementById("fullautogunban").value,
-                    "option1" : document.getElementById("option1").value,
-                    "option2" : document.getElementById("option2").value,
-                    "option3" : document.getElementById("option3").value,
-                    "yes1" : document.getElementById("yes1").value,
-                    "no1" : document.getElementById("no1").value,
-                    "gunmap1" : document.getElementsByName("gunmap1").value,
-                    "gunmap2" : document.getElementsByName("gunmap2").value,
-                    "gunmap3" : document.getElementsByName("gunmap3").value,
-                    "yes2" : document.getElementById("yes2").value,
-                    "no2" : document.getElementById("no2").value,
-                    "beararmsAnswer" : beararmsAnswer,
+                    "question1" : question1value,
+                    "question2" : question2value,
+                    "question3" : question3value,
+                    "question4" : question4value,
+                    "question5" : question5value,
+                    "beararmsAnswer" : document.getElementById("beararmsquestion").value
                 };
 
                 // Turn the data object into a string.
@@ -238,20 +238,15 @@
                     return;
                 }
 
+                alert('restore '+dataObjectAsString);
+
                 document.getElementById("personname").value = dataObject.personname;
-                document.getElementById("assualtweaponsban").value = dataObject.assualtweaponsban.getElementsByName('Correct');
-                document.getElementById("fullautogunban").value = dataObject.fullautogunban.getElementsByName('Incorrect');
-                document.getElementById("option1").value = dataObject.option1.getElementsByName('Incorrect');
-                document.getElementById("option2").value = dataObject.option2.getElementsByName('Correct');
-                document.getElementById("option3").value = dataObject.option3.getElementsByName('Incorrect');
-                document.getElementById("yes1").value = dataObject.yes1.getElementsByName('Incorrect');
-                document.getElementById("no1").value = dataObject.no1.getElementsByName('Correct');
-                document.getElementById("gunmap1").value = dataObject.gunmap1.getElementsByName('Correct');
-                document.getElementById("gunmap2").value = dataObject.gunmap2.getElementsByName('Incorrect');
-                document.getElementById("gunmap3").value = dataObject.gunmap3.getElementsByName('Incorrect');
-                document.getElementById("yes2").value = dataObject.yes2.getElementsByName('Incorrect');
-                document.getElementById("no2").value = dataObject.no2.getElementsByName('Correct');
-                document.getElementById("beararmsAnswer").value = dataObject.beararmsAnswer;
+                document.getElementById("question1").value = dataObject.question1;
+                document.getElementById("question2").value = dataObject.question2;
+                document.getElementById("question3").value = dataObject.question3;
+                document.getElementById("question4").value = dataObject.question4;
+                document.getElementById("question5").value = dataObject.question5;
+                document.getElementById("beararmsquestion").value = dataObject.beararmsAnswer;
 
                 // Display Restored alert at top of form
                 document.getElementById("restored").style.display = "block";
@@ -271,7 +266,7 @@
             }
 
             window.onload = function() { // Runs code on load
-                restoreFromLocalStorage();
+                restore();
             };
 
             function reset() {
@@ -287,19 +282,12 @@
                 window.localStorage.setItem("data", null);
 
                 document.getElementById("personname").value = "";
-                document.getElementById("assualtweaponsban").value = "";
-                document.getElementById("fullautogunban").value = "";
-                document.getElementById("option1").value = "";
-                document.getElementById("option2").value = "";
-                document.getElementById("option3").value = "";
-                document.getElementById("yes1").value = "";
-                document.getElementById("no1").value = "";
-                document.getElementById("gunmap1").value = "";
-                document.getElementById("gunmap2").value = "";
-                document.getElementById("gunmap3").value = "";
-                document.getElementById("yes2").value = "";
-                document.getElementById("no2").value = "";
-                document.getElementById("beararmsAnswer").value = "";
+                document.getElementById("question1").value = "";
+                document.getElementById("question2").value = "";
+                document.getElementById("question3").value = "";
+                document.getElementById("question4").value = "";
+                document.getElementById("question5").value = "";
+                document.getElementById("beararmsquestion").value = "";
 
                 // scroll back to top of page
                 window.location.reload();

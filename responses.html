@@ -47,68 +47,33 @@
                     </div>
 
                 <div class="form-group">
-                    <label for="assualtweaponsban">assualtweaponsban:</label>
-                    <textarea id="assualtweaponsban" rows="1"></textarea>
+                    <label for="question1">question1:</label>
+                    <textarea id="question1" rows="1"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="fullautogunban">fullautogunban:</label>
-                    <textarea id="fullautogunban" rows="1"></textarea>
+                    <label for="question2">question2:</label>
+                    <textarea id="question2" rows="1"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="option1">option1:</label>
-                    <textarea id="option1" rows="1"></textarea>
+                    <label for="question3">question3:</label>
+                    <textarea id="question3" rows="1"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="option2">option2:</label>
-                    <textarea id="option2" rows="1"></textarea>
+                    <label for="question4">question4:</label>
+                    <textarea id="question4" rows="1"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="option3">option3:</label>
-                    <textarea id="option3" rows="1"></textarea>
+                    <label for="question5">question5:</label>
+                    <textarea id="question5" rows="1"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="yes1">yes1:</label>
-                    <textarea id="yes1" rows="1"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="no1">no1:</label>
-                    <textarea id="no1" rows="1"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="gunmap1">gunmap1:</label>
-                    <textarea id="gunmap1" rows="1"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="gunmap2">gunmap2:</label>
-                    <textarea id="gunmap2" rows="1"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="gunmap3">gunmap3:</label>
-                    <textarea id="gunmap3" rows="1"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="yes2">yes2:</label>
-                    <textarea id="yes2" rows="1"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="no2">no2:</label>
-                    <textarea id="no2" rows="1"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="beararmsAnswer">beararmsAnswer:</label>
-                    <textarea id="beararmsAnswer" rows="1"></textarea>
+                    <label for="beararmsquestion">beararmsquestion:</label>
+                    <textarea id="beararmsquestion" rows="1"></textarea>
                 </div>
             </form>
         </div>
@@ -133,19 +98,12 @@
                 // We successfully got a data object and now textbox's can get the saved values.
                 document.getElementById("dataObjectAsString").value = dataObjectAsString;
                 document.getElementById("personname").value = dataObject.personname;
-                document.getElementById("assualtweaponsban").value = dataObject.assualtweaponsban.getElementsByName('Correct');
-                document.getElementById("fullautogunban").value = dataObject.fullautogunban.getElementsByName('Incorrect');
-                document.getElementById("option1").value = dataObject.option1.getElementsByName('Incorrect');
-                document.getElementById("option2").value = dataObject.option2.getElementsByName('Correct');
-                document.getElementById("option3").value = dataObject.option3.getElementsByName('Incorrect');
-                document.getElementById("yes1").value = dataObject.yes1.getElementsByName('Incorrect');
-                document.getElementById("no1").value = dataObject.no1.getElementsByName('Correct');
-                document.getElementById("gunmap1").value = dataObject.gunmap1.getElementsByName('Correct');
-                document.getElementById("gunmap2").value = dataObject.gunmap2.getElementsByName('Incorrect');
-                document.getElementById("gunmap3").value = dataObject.gunmap3.getElementsByName('Incorrect');
-                document.getElementById("yes2").value = dataObject.yes2.getElementsByName('Incorrect');
-                document.getElementById("no2").value = dataObject.no2.getElementsByName('Correct');
-                document.getElementById("beararmsAnswer").value = dataObject.beararmsAnswer;
+                document.getElementById("question1").value = dataObject.question1;
+                document.getElementById("question2").value = dataObject.question2;
+                document.getElementById("question3").value = dataObject.question3;
+                document.getElementById("question4").value = dataObject.question4;
+                document.getElementById("question5").value = dataObject.question5;
+                document.getElementById("beararmsquestion").value = dataObject.beararmsAnswer;
             }
 
         </script>
