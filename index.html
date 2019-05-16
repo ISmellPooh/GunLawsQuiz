@@ -134,27 +134,15 @@
             </div>
 
             <div class="form-group">
-                <label for="pokemonImage">Here is the starter pokemon of the day:</label>
-                <div class="container">
-                    <div class="row" id="pokemonImage">
-                        <div class="col col-md-3" style="display:none;">
-                            <img img class="img-fluid" src="Torterra.png" width="150" height="300" alt="Torterra">
-                        </div>
-
-                        <div class="col col-md-3" style="display:none;">
-                            <img img class="img-fluid" src="Blaziken.png" width="150" height="300" alt="Blaziken">
-                        </div>
-
-                        <div class="col col-md-3" style="display:none;">
-                            <img img class="img-fluid" src="Greninja.png" width="150" height="300" alt="Greninja">
-                        </div>
-                    </div>
-                </div>
+                    <label for="pokemonName">Info on one pokemon:</label>
+                    <textarea class="form-control" id="pokemonName" rows="1"></textarea>
+                    <label for="pokemonInfo">Info on all pokemon:</label>
+                    <textarea class="form-control" id="pokemonInfo" rows="100"></textarea>
             </div>
 
         <script>
 
-            /*var getJSON = function(url, callback) {
+            var getJSON = function(url, callback) {
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', url, true);
                 xhr.responseType = 'json';
@@ -169,10 +157,38 @@
                 xhr.send();
             };
 
-            document.write("getDay() : " + Date.getDay() );
-            if(Date.getDay() === 1) {
+            String.prototype.addAt = function (index, character) {
+                return this.substr(0, index - 1) + character + this.substr(index-1 + character.length-1);
+            }
 
-            }*/
+            function randomIntFromInterval(min,max) {
+                // min and max included 
+                return Math.floor(Math.random()*(max-min+1)+min);
+            }
+
+            function pokemonCharacters() {
+                var pokemonNameDiv = document.getElementById('pokemonName');
+                var pokemonInfoDiv = document.getElementById('pokemonInfo');
+                getJSON('https://cors.io/?https://api.pokemontcg.io/v1/cards',
+                function(err, data) {
+                    if (err !== null) {
+                        alert('Pokemon API went wrong: ' + err);
+                    } else {
+                        var character = data.cards[randomIntFromInterval(0, data.cards.length)];
+                        console.log(character);
+                        console.log(data);
+                        pokemonNameDiv.value = "Name: " + character.name + " " + "Pokedex #: " + character.nationalPokedexNumber + " " + "Evolves from: " + character.evolvesFrom;
+                    }
+
+                    var characters = '';
+                    for (var i = 0; i < data.cards.length; i = i + 1) {
+                        characters = characters + "Name: "+ data.cards[i].name + " " + "Pokedex #: " + data.cards[i].nationalPokedexNumber + " " + "Evolves from: " + data.cards[i].evolvesFrom;
+                        characters = characters + '\n';
+                    }
+                    pokemonInfoDiv.value = characters;
+
+                });
+            }
 
             function displayNextQuestions(set) {
                 // set is which set of questions was just displayed
@@ -305,6 +321,7 @@
 
             window.onload = function() { // Runs code on load
                 restore();
+                pokemonCharacters();
             };
 
             function reset() {
